@@ -5,4 +5,6 @@ gemspec
 
 gem 'sqlite3'
 gem 'pg'
-gem 'mysql2'
+
+# Soon
+# gem 'mysql2'

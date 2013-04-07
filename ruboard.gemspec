@@ -22,5 +22,4 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'rails', ['>= 3.1.10', '< 3.3'] | 0.upto(10).map{|i| "!= 3.2.#{i}"}
   gem.add_dependency 'friendly_id', '~> 4.0', '>= 4.0.9'
-  gem.add_dependency 'nested_set', '~> 1.7.1'
 end

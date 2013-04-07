@@ -1,3 +1,4 @@
+# This migration comes from ruboard (originally 20130317091811)
 class CreateRuboardForums < ActiveRecord::Migration
   def change
     create_table :ruboard_forums do |t|

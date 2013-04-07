@@ -1,10 +1,18 @@
+require 'friendly_id'
+
 module Ruboard
   class Forum < ActiveRecord::Base
-    attr_accessible :title, :category
+    extend FriendlyId
 
-    belongs_to :category
+    attr_accessible :title, :description
+
+    default_scope order('title ASC')
+
     has_many :topics, :dependent => :destroy
 
-    acts_as_nested_set
+    validates :title, :presence => true, :length => { :minimum => 3, :maximum => 250 }
+
+    friendly_id :title, :use => :slugged
+
   end
 end
