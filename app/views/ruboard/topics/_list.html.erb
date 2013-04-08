@@ -1,0 +1,13 @@
+<table class="ruboardForums__topics table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2"><%= link_to forum.title, ruboard.forum_path(forum) %></th>
+      <th><%= t('activerecord.attributes.topic.answers') %></th>
+      <th><%= t('activerecord.attributes.topic.views') %></th>
+      <th><%= t('activerecord.attributes.topic.updates') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render forum.topics, :forum => forum %>
+  </tbody>
+</table>

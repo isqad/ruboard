@@ -1,0 +1,9 @@
+<tr>
+  <td>Status</td>
+  <td>
+    <%= link_to topic.title, ruboard.forum_topic_path(forum, topic) %>
+  </td>
+  <td><%= topic.posts.size %></td>
+  <td><%= topic.views_count %></td>
+  <td><%= l(topic.updated_at, :format => :ruboard_full) %></td>
+</tr>

@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      topic:
+        one: 'Topic'
+        other: 'Topics'
+    attributes:
+      topic:
+        title: 'Subject'
+        answers: 'Answers'
+        views: 'Views'
+        updates: 'Updates'

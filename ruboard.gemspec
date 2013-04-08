@@ -19,7 +19,12 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'rspec-rails', '~> 2.6'
   gem.add_development_dependency 'factory_girl_rails', '~> 1.7'
+  gem.add_development_dependency 'database_cleaner'
+  gem.add_development_dependency 'devise'
+  gem.add_development_dependency 'jquery-rails'
+  gem.add_development_dependency 'russian'
 
   gem.add_dependency 'rails', ['>= 3.1.10', '< 3.3'] | 0.upto(10).map{|i| "!= 3.2.#{i}"}
   gem.add_dependency 'friendly_id', '~> 4.0', '>= 4.0.9'
+  gem.add_dependency 'rails-timeago', '~> 2.0'
 end

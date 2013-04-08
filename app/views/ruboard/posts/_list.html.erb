@@ -1,0 +1,10 @@
+<table class="ruboardTopics__posts table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2" class="ruboardTopics__posts__title"><%= link_to topic.title, ruboard.forum_topic_path(forum, topic) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render posts, :forum => forum, :topic => topic %>
+  </tbody>
+</table>

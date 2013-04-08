@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      topic:
+        one: 'Тема'
+        few: 'Темы'
+        many: 'Тем'
+        other: 'Темы'
+    attributes:
+      topic:
+        title: 'Название'
+        answers: 'Ответов'
+        views: 'Просмотров'
+        updates: 'Обновления'
+      post:
+        body: 'Сообщение'
+        created_at: 'Отправлено'
+  time:
+    formats:
+      ruboard_full: '%d %B %Y %H:%M'

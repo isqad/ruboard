@@ -1,0 +1,1 @@
+Ruboard.user_class = 'User'

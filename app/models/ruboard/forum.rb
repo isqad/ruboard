@@ -14,5 +14,11 @@ module Ruboard
 
     friendly_id :title, :use => :slugged
 
+    class << self
+      def with_topics
+        includes(:topics)
+      end
+    end
+
   end
 end

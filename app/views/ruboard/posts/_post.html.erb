@@ -1,0 +1,30 @@
+<tr>
+  <td><%= post.user_name %></td>
+  <td>
+    <div class="ruboardTopics__posts__info" id="post-<%= post.id %>">
+      <div class="ruboardTopics__posts__info__created">
+        <%= "#{t('activerecord.attributes.post.created_at')}: #{l(post.created_at, :format => :ruboard_full)}" %>
+      </div>
+      <div class="ruboardTopics__posts__info__number">
+        <%= link_to "##{post_counter + 1}", "#post-#{post.id}" %>
+      </div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td rowspan="3" class="ruboardTopics__posts__user">
+    Avatar
+    <p><%= t('ruboard.user.posts') %>: 0</p>
+  </td>
+</tr>
+<tr>
+  <td colspan="2">
+    <div class="ruboardTopics__posts__body">
+      <%= post.body %>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td>Forum Sign</td>
+  <td>Menu</td>
+</tr>

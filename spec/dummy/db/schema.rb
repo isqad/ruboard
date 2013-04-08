@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407172918) do
+ActiveRecord::Schema.define(:version => 20130408103824) do
 
   create_table "ruboard_forums", :force => true do |t|
     t.string   "title",                         :null => false
@@ -38,15 +38,42 @@ ActiveRecord::Schema.define(:version => 20130407172918) do
   add_index "ruboard_posts", ["user_id"], :name => "index_ruboard_posts_on_user_id"
 
   create_table "ruboard_topics", :force => true do |t|
-    t.integer  "forum_id",                      :null => false
-    t.integer  "user_id",                       :null => false
-    t.boolean  "closed",     :default => false, :null => false
-    t.boolean  "pinned",     :default => false, :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "title",                          :null => false
+    t.integer  "forum_id",                       :null => false
+    t.integer  "user_id",                        :null => false
+    t.boolean  "closed",      :default => false, :null => false
+    t.boolean  "pinned",      :default => false, :null => false
+    t.string   "slug"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "views_count", :default => 0
+    t.integer  "posts_count", :default => 0
   end
 
   add_index "ruboard_topics", ["forum_id"], :name => "index_ruboard_topics_on_forum_id"
+  add_index "ruboard_topics", ["slug"], :name => "index_ruboard_topics_on_slug", :unique => true
   add_index "ruboard_topics", ["user_id"], :name => "index_ruboard_topics_on_user_id"
+
+  create_table "ruboard_views", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "viewable_id"
+    t.string   "viewable_type"
+    t.datetime "current_viewed_at"
+    t.datetime "past_viewed_at"
+    t.integer  "count",             :default => 0
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "ruboard_views", ["user_id"], :name => "index_ruboard_views_on_user_id"
+  add_index "ruboard_views", ["viewable_id", "viewable_type"], :name => "ruboard_views_viewable_idx"
+
+  create_table "users", :force => true do |t|
+    t.string "name",                                              :null => false
+    t.string "email",                             :default => "", :null => false
+    t.string "encrypted_password", :limit => 128, :default => "", :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
